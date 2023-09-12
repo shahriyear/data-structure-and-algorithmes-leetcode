@@ -3,29 +3,27 @@
 
 function removeElement(&$nums, $val)
 {
-
-    $count = count($nums) - 1;
-    for ($i = 0; $i <= $count; $i++) {
-        if ($nums[$i] === $val) {
-            unset($nums[$i]);
+    $newLength = 0;
+    $count = count($nums);
+    for ($i = 0; $i < $count; $i++) {
+        if ($nums[$i] !== $val) {
+            $nums[$newLength++] = $nums[$i];
         }
     }
-
-    // return count($nums);
+    return $newLength;
 }
 
 
 
 
-$nums = [0,1,2,2,3,0,4,2];
+$nums = [0, 1, 2, 2, 3, 0, 4, 2];
 
-removeElement($nums,2);
-print_r(count($nums));
+$k = removeElement($nums, 2);
+print_r($k);
 print_r($nums);
 
-$nums = [3,2,2,3];
 echo PHP_EOL;
-$k = removeElement($nums,3);
-print_r(count($nums));
+$nums = [3, 2, 2, 3];
+$k = removeElement($nums, 3);
+print_r($k);
 print_r($nums);
-
