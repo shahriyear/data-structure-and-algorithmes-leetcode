@@ -3,8 +3,10 @@
 
 function removeElement(&$nums, $val)
 {
-    $newLength = 0;
     $count = count($nums);
+    if ($count === 0) return 0;
+    $newLength = 0;
+
     for ($i = 0; $i < $count; $i++) {
         if ($nums[$i] !== $val) {
             $nums[$newLength++] = $nums[$i];
