@@ -24,6 +24,6 @@ print_r($nums);
 
 echo PHP_EOL;
 $nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-removeDuplicates($nums);
+$k = removeDuplicates($nums);
 print_r($k);
 print_r($nums);
